@@ -912,7 +912,7 @@ else:
         prs = Presentation()
 
         # Loop through each DataFrame and create a new slide with a table
-        for i, (df, title) in enumerate(zip(dfrs, table_titles)):
+        for i, (df, title) in enumerate(zip(dfs, table_titles)):
             slide = prs.slides.add_slide(prs.slide_layouts[6])
             add_table_to_slide(slide, df, title, textbox_text[i])
 
