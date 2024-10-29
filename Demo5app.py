@@ -857,7 +857,7 @@ else:
             # Set alignment to center
             paragraph.alignment = PP_ALIGN.CENTER
             # Set vertical alignment to be at the top
-             paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
 
 
     # # Add Time Period text
