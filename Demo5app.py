@@ -14,6 +14,10 @@ import nltk
 import os
 from openpyxl import Workbook
 from openpyxl.comments import Comment
+from openpyxl import Workbook
+from openpyxl.comments import Comment
+from openpyxl.styles import Border, Side, Alignment, Font,PatternFill
+from openpyxl.utils.dataframe import dataframe_to_rows # Add these imports
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.enum.text import PP_ALIGN
