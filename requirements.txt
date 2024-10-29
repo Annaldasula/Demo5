@@ -6,4 +6,4 @@ numpy
 pillow
 matplotlib
 nltk
-pptx
+python-pptx
