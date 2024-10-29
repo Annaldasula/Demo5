@@ -506,178 +506,178 @@ News search: All Articles: entity mentioned at least once in the article"""
 else:
     st.sidebar.write("No file uploaded yet.")
 
-        # Load the image files
-        img_path = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Documents\NewLogo.PNG"
-        img_path1 = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Pictures\Picture1.png"
+    # Load the image files
+    img_path = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Documents\NewLogo.PNG"
+    img_path1 = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Pictures\Picture1.png"
 
-        # Create a new PowerPoint presentation with widescreen dimensions
-        prs = Presentation()               
-        prs.slide_width = Inches(16)
-        prs.slide_height = Inches(9)
+    # Create a new PowerPoint presentation with widescreen dimensions
+    prs = Presentation()               
+    prs.slide_width = Inches(16)
+    prs.slide_height = Inches(9)
 
-        # Add the first slide with the image
-        slide_layout = prs.slide_layouts[0]
-        slide = prs.slides.add_slide(slide_layout)
-        slide.shapes.add_picture(img_path1, Inches(0), Inches(0), width=prs.slide_width, height=prs.slide_height)
+    # Add the first slide with the image
+    slide_layout = prs.slide_layouts[0]
+    slide = prs.slides.add_slide(slide_layout)
+    slide.shapes.add_picture(img_path1, Inches(0), Inches(0), width=prs.slide_width, height=prs.slide_height)
 
-        # Add the text box above the image
-        textbox_left = Inches(0.5)  # Adjust the left position as needed
-        textbox_top = Inches(5)   # Adjust the top position as needed
-        textbox_width = Inches(15)  # Adjust the width as needed
-        textbox_height = Inches(1)  # Adjust the height as needed
+    # Add the text box above the image
+    textbox_left = Inches(0.5)  # Adjust the left position as needed
+    textbox_top = Inches(5)   # Adjust the top position as needed
+    textbox_width = Inches(15)  # Adjust the width as needed
+    textbox_height = Inches(1)  # Adjust the height as needed
 
-        text_box = slide.shapes.add_textbox(textbox_left, textbox_top, textbox_width, textbox_height)
-        text_frame = text_box.text_frame
-        text_frame.text = "Client Name"
+    text_box = slide.shapes.add_textbox(textbox_left, textbox_top, textbox_width, textbox_height)
+    text_frame = text_box.text_frame
+    text_frame.text = "Client Name"
         
-        # Set font size to 30 and make the text bold and white
-        for paragraph in text_frame.paragraphs:
-            for run in paragraph.runs:
-                run.font.size = Pt(50)
-                run.font.bold = True
-#               run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(255, 255, 255)  # White color
-                paragraph.alignment = PP_ALIGN.CENTER
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
-        # Add title slide after the first slide
-        slide_layout = prs.slide_layouts[6]
-        slide = prs.slides.add_slide(slide_layout)
+    # Set font size to 30 and make the text bold and white
+    for paragraph in text_frame.paragraphs:
+        for run in paragraph.runs:
+            run.font.size = Pt(50)
+            run.font.bold = True
+#           run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(255, 255, 255)  # White color
+            paragraph.alignment = PP_ALIGN.CENTER
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
+    # Add title slide after the first slide
+    slide_layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(slide_layout)
 
-        left = Inches(0.0)  # Adjust the left position as needed
-        top = prs.slide_height - Inches(1)  # Adjust the top position as needed
-        slide.shapes.add_picture(img_path, left, top, height=Inches(1))  # Adjust the height as needed 
+    left = Inches(0.0)  # Adjust the left position as needed
+    top = prs.slide_height - Inches(1)  # Adjust the top position as needed
+    slide.shapes.add_picture(img_path, left, top, height=Inches(1))  # Adjust the height as needed 
 
         
-        # Clear existing placeholders
-        for shape in slide.placeholders:
-            if shape.has_text_frame:
-                shape.text_frame.clear()  # Clear existing text frames
+    # Clear existing placeholders
+    for shape in slide.placeholders:
+        if shape.has_text_frame:
+            shape.text_frame.clear()  # Clear existing text frames
 
-        # Set title text and format for Parameters slide
-        header_text = "Parameters"
-        header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.7))
-        header_frame = header_shape.text_frame
-        header_frame.text = header_text
+    # Set title text and format for Parameters slide
+    header_text = "Parameters"
+    header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.7))
+    header_frame = header_shape.text_frame
+    header_frame.text = header_text
 
-        for paragraph in header_frame.paragraphs:
-            for run in paragraph.runs:
-                run.text = header_text
-                run.font.size = Pt(30)
-                run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(240, 127, 9)
-                # Set alignment to center
-                paragraph.alignment = PP_ALIGN.CENTER
-                # Set vertical alignment to be at the top
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
+    for paragraph in header_frame.paragraphs:
+        for run in paragraph.runs:
+            run.text = header_text
+            run.font.size = Pt(30)
+            run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(240, 127, 9)
+            # Set alignment to center
+            paragraph.alignment = PP_ALIGN.CENTER
+            # Set vertical alignment to be at the top
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
 
-        # Add Time Period text
-        time_period_text = "Time Period : 19th April 2023 to 18th April 2024"
-        time_period_shape = slide.shapes.add_textbox(Inches(0.6), Inches(2), Inches(14), Inches(0.5))
-        time_period_frame = time_period_shape.text_frame
-        time_period_frame.text = time_period_text
-        # time_period_frame.paragraphs[0].font.bold = True
-        time_period_frame.paragraphs[0].font.size = Pt(24)
-        time_period_frame.paragraphs[0].font.name = 'Gill Sans'
+    # Add Time Period text
+    time_period_text = "Time Period : 19th April 2023 to 18th April 2024"
+    time_period_shape = slide.shapes.add_textbox(Inches(0.6), Inches(2), Inches(14), Inches(0.5))
+    time_period_frame = time_period_shape.text_frame
+    time_period_frame.text = time_period_text
+    # time_period_frame.paragraphs[0].font.bold = True
+    time_period_frame.paragraphs[0].font.size = Pt(24)
+    time_period_frame.paragraphs[0].font.name = 'Gill Sans'
 
 
-        # Add Source text
-        source_text = "Source : (Online)Meltwater, Select 100 online publications, which include General mainlines, Business and Financial publications, news age media, technology publications."
-        source_shape = slide.shapes.add_textbox(Inches(0.6), Inches(3), Inches(10), Inches(1.5))  # Adjusted width
-        source_frame = source_shape.text_frame
-        source_frame.word_wrap = True  # Enable text wrapping
-        p = source_frame.add_paragraph()  # Create a paragraph for text
-        p.text = source_text  # Set the text
+    # Add Source text
+    source_text = "Source : (Online)Meltwater, Select 100 online publications, which include General mainlines, Business and Financial publications, news age media, technology publications."
+    source_shape = slide.shapes.add_textbox(Inches(0.6), Inches(3), Inches(10), Inches(1.5))  # Adjusted width
+    source_frame = source_shape.text_frame
+    source_frame.word_wrap = True  # Enable text wrapping
+    p = source_frame.add_paragraph()  # Create a paragraph for text
+    p.text = source_text  # Set the text
 
-        p.font.size = Pt(24)
-        p.font.name = 'Gill Sans'  # Changed to Arial for compatibility
+    p.font.size = Pt(24)
+    p.font.name = 'Gill Sans'  # Changed to Arial for compatibility
 
-        # Add News Search text
-        news_search_text = "News Search : All Articles: entity mentioned at least once in the article "
-        news_search_shape = slide.shapes.add_textbox(Inches(0.6), Inches(5), Inches(10), Inches(0.75))  # Adjusted width and height
-        news_search_frame = news_search_shape.text_frame
-        news_search_frame.word_wrap = True  # Enable text wrapping
-        p2 = news_search_frame.add_paragraph()  # Create a paragraph for text
-        p2.text = news_search_text  # Set the text
+    # Add News Search text
+    news_search_text = "News Search : All Articles: entity mentioned at least once in the article "
+    news_search_shape = slide.shapes.add_textbox(Inches(0.6), Inches(5), Inches(10), Inches(0.75))  # Adjusted width and height
+    news_search_frame = news_search_shape.text_frame
+    news_search_frame.word_wrap = True  # Enable text wrapping
+    p2 = news_search_frame.add_paragraph()  # Create a paragraph for text
+    p2.text = news_search_text  # Set the text
 
-        # Set font properties after text is added
-        # p2.font.bold = True
-        p2.font.size = Pt(24)
-        p2.font.name = 'Gill Sans'  # Changed to Arial for compatibility
+    # Set font properties after text is added
+    # p2.font.bold = True
+    p2.font.size = Pt(24)
+    p2.font.name = 'Gill Sans'  # Changed to Arial for compatibility
         
-        # Add the first slide with the image
-        slide_layout = prs.slide_layouts[0]
-        slide = prs.slides.add_slide(slide_layout)
-        slide.shapes.add_picture(img_path1, Inches(0), Inches(0), width=prs.slide_width, height=prs.slide_height)
+    # Add the first slide with the image
+    slide_layout = prs.slide_layouts[0]
+    slide = prs.slides.add_slide(slide_layout)
+    slide.shapes.add_picture(img_path1, Inches(0), Inches(0), width=prs.slide_width, height=prs.slide_height)
 
-        # Add the text box above the image
-        textbox_left = Inches(0.5)  # Adjust the left position as needed
-        textbox_top = Inches(5)   # Adjust the top position as needed
-        textbox_width = Inches(15)  # Adjust the width as needed
-        textbox_height = Inches(1)  # Adjust the height as needed
+    # Add the text box above the image
+    textbox_left = Inches(0.5)  # Adjust the left position as needed
+    textbox_top = Inches(5)   # Adjust the top position as needed
+    textbox_width = Inches(15)  # Adjust the width as needed
+    textbox_height = Inches(1)  # Adjust the height as needed
 
-        text_box = slide.shapes.add_textbox(textbox_left, textbox_top, textbox_width, textbox_height)
-        text_frame = text_box.text_frame
-        text_frame.text = "Online Media"
+    text_box = slide.shapes.add_textbox(textbox_left, textbox_top, textbox_width, textbox_height)
+    text_frame = text_box.text_frame
+    text_frame.text = "Online Media"
 
-        # Set font size to 30 and make the text bold and white
-        for paragraph in text_frame.paragraphs:
-            for run in paragraph.runs:
-                run.font.size = Pt(50)
-                run.font.bold = True
-#               run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(255, 255, 255)  # White color
-                paragraph.alignment = PP_ALIGN.CENTER
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
+    # Set font size to 30 and make the text bold and white
+    for paragraph in text_frame.paragraphs:
+        for run in paragraph.runs:
+            run.font.size = Pt(50)
+            run.font.bold = True
+#           run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(255, 255, 255)  # White color
+            paragraph.alignment = PP_ALIGN.CENTER
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.MIDDLE
 
-        # Add title slide after the first slide
-        slide_layout = prs.slide_layouts[6]
-        slide = prs.slides.add_slide(slide_layout)
+    # Add title slide after the first slide
+    slide_layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(slide_layout)
 
-        left = Inches(0.0)  # Adjust the left position as needed
-        top = prs.slide_height - Inches(1)  # Adjust the top position as needed
-        slide.shapes.add_picture(img_path, left, top, height=Inches(1))  # Adjust the height as needed 
+    left = Inches(0.0)  # Adjust the left position as needed
+    top = prs.slide_height - Inches(1)  # Adjust the top position as needed
+    slide.shapes.add_picture(img_path, left, top, height=Inches(1))  # Adjust the height as needed 
          
-        # Clear existing placeholders
-        for shape in slide.placeholders:
-            if shape.has_text_frame:
-                shape.text_frame.clear()  # Clear existing text frames
+    # Clear existing placeholders
+    for shape in slide.placeholders:
+        if shape.has_text_frame:
+            shape.text_frame.clear()  # Clear existing text frames
 
-        # Set title text and format for Parameters slide
-        header_text = "Inferences and Recommendations"
-        header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.2), Inches(14), Inches(0.7))
-        header_frame = header_shape.text_frame
-        header_frame.text = header_text
-        for paragraph in header_frame.paragraphs:
-            for run in paragraph.runs:
-                run.text = header_text
-                run.font.size = Pt(30)
-                run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(240, 127, 9)
-                # Set alignment to center
-                paragraph.alignment = PP_ALIGN.CENTER
-                # Set vertical alignment to be at the top
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP  
+    # Set title text and format for Parameters slide
+    header_text = "Inferences and Recommendations"
+    header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.2), Inches(14), Inches(0.7))
+    header_frame = header_shape.text_frame
+    header_frame.text = header_text
+    for paragraph in header_frame.paragraphs:
+        for run in paragraph.runs:
+            run.text = header_text
+            run.font.size = Pt(30)
+            run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(240, 127, 9)
+            # Set alignment to center
+            paragraph.alignment = PP_ALIGN.CENTER
+            # Set vertical alignment to be at the top
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP  
 
 
-        # Add SOV text
-        sov_text = ("Share of Voice :")
-        sov_text_shape = slide.shapes.add_textbox(Inches(0.3), Inches(0.6), Inches(14), Inches(0.5))
-        sov_text_frame = sov_text_shape.text_frame
-        sov_text_frame.word_wrap = True
-        sov_text_frame.clear()  # Clear any default paragraph
+    # Add SOV text
+    sov_text = ("Share of Voice :")
+    sov_text_shape = slide.shapes.add_textbox(Inches(0.3), Inches(0.6), Inches(14), Inches(0.5))
+    sov_text_frame = sov_text_shape.text_frame
+    sov_text_frame.word_wrap = True
+    sov_text_frame.clear()  # Clear any default paragraph
 
-        p = sov_text_frame.add_paragraph()
-        p.text = "Share of Voice :"
-        p.font.size = Pt(20)
-        p.font.name = 'Gill Sans'
-        p.font.underline = True
-        p.font.bold = True
+    p = sov_text_frame.add_paragraph()
+    p.text = "Share of Voice :"
+    p.font.size = Pt(20)
+    p.font.name = 'Gill Sans'
+    p.font.underline = True
+    p.font.bold = True
 
-        sov_text = (
+    sov_text = (
     "IIT Ropar and its peers collectively received a total of 5017 prominent news mentions online during the specified time period.\n"
     "Among these, IIT Madras dominates the conversation with 35% of the total SOV, indicating significant media coverage and visibility.\n"
     "IIT Delhi follows IIT Madras, capturing 21% of the SOV. While its coverage is notably lower than IIT Madras, it still indicates a considerable presence in the online space.\n"
@@ -687,14 +687,14 @@ else:
     "Given the relatively lower SOV compared to peers like IIT Delhi, IIT Madras, and others, there are opportunities for IIT Ropar to enhance its online presence and visibility through strategic communications efforts.\n"
     "IIT Ropar has received 239 all mentions and 44 prominent articles in online media and stands last in both the SOVs.\n"
         )
-        sov_text_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
-        sov_text_frame = sov_text_shape.text_frame
-        sov_text_frame.word_wrap = True
-        sov_text_frame.clear()  # Clear any default paragraph
+    sov_text_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
+    sov_text_frame = sov_text_shape.text_frame
+    sov_text_frame.word_wrap = True
+    sov_text_frame.clear()  # Clear any default paragraph
 
 
-        p = sov_text_frame.add_paragraph()
-        p.text = (
+    p = sov_text_frame.add_paragraph()
+    p.text = (
     "IIT Ropar and its peers collectively received a total of 5017 prominent news mentions online during the specified time period.\n"
     "Among these, IIT Madras dominates the conversation with 35% of the total SOV, indicating significant media coverage and visibility.\n"
     "IIT Delhi follows IIT Madras, capturing 21% of the SOV. While its coverage is notably lower than IIT Madras, it still indicates a considerable presence in the online space.\n"
@@ -704,229 +704,229 @@ else:
     "Given the relatively lower SOV compared to peers like IIT Delhi, IIT Madras, and others, there are opportunities for IIT Ropar to enhance its online presence and visibility through strategic communications efforts.\n"
     "IIT Ropar has received 239 all mentions and 44 prominent articles in online media and stands last in both the SOVs.\n"
     )
-        p.font.size = Pt(18)
-        p.font.name = 'Gill Sans'
+    p.font.size = Pt(18)
+    p.font.name = 'Gill Sans'
 
-        # Add Source text
-        source_text = ("Publications :")
-        source_shape = slide.shapes.add_textbox(Inches(0.3), Inches(5.8), Inches(14), Inches(1))
-        source_frame = source_shape.text_frame
-        source_frame.word_wrap = True
-        source_frame.clear()  # Clear any default paragraph
-        p = source_frame.add_paragraph()
-        p.text = "Publications :"
-        p.font.size = Pt(20)
-        p.font.name = 'Gill Sans'
-        p.font.underline = True
-        p.font.bold = True
+    # Add Source text
+    source_text = ("Publications :")
+    source_shape = slide.shapes.add_textbox(Inches(0.3), Inches(5.8), Inches(14), Inches(1))
+    source_frame = source_shape.text_frame
+    source_frame.word_wrap = True
+    source_frame.clear()  # Clear any default paragraph
+    p = source_frame.add_paragraph()
+    p.text = "Publications :"
+    p.font.size = Pt(20)
+    p.font.name = 'Gill Sans'
+    p.font.underline = True
+    p.font.bold = True
 
 
-        source_text = (
+    source_text = (
     "The leading publications reporting on IIT Ropar and its competitors are Times of India, contributing 561 articles, followed by Economic Times with 467 articles, and The Indian Express with 455 articles.\n"
 "Among these ,publications covering news on IIT Ropar specifically are The Indian Express takes the lead with 9 articles, followed by Tribune with 9 articles, and Times of India with 7 articles.\n"
 "The top 10 publications writing articles on IIT Ropar contribute 86% of the total 44 articles.\n" 
 )
-        source_shape = slide.shapes.add_textbox(Inches(0.3), Inches(6.1), Inches(14), Inches(1))
-        source_frame = source_shape.text_frame
-        source_frame.word_wrap = True
-        source_frame.clear()  # Clear any default paragraph
-        p = source_frame.add_paragraph()
-        p.text = (
+    source_shape = slide.shapes.add_textbox(Inches(0.3), Inches(6.1), Inches(14), Inches(1))
+    source_frame = source_shape.text_frame
+    source_frame.word_wrap = True
+    source_frame.clear()  # Clear any default paragraph
+    p = source_frame.add_paragraph()
+    p.text = (
     "The leading publications reporting on IIT Ropar and its competitors are Times of India, contributing 561 articles, followed by Economic Times with 467 articles, and The Indian Express with 455 articles.\n"
 "Among these ,publications covering news on IIT Ropar specifically are The Indian Express takes the lead with 9 articles, followed by Tribune with 9 articles, and Times of India with 7 articles.\n"
 "The top 10 publications writing articles on IIT Ropar contribute 86% of the total 44 articles.\n" 
 )
-        p.font.size = Pt(18)
-        p.font.name = 'Gill Sans'
+    p.font.size = Pt(18)
+    p.font.name = 'Gill Sans'
 
-        # Add title slide after the first slide
-        slide_layout = prs.slide_layouts[6]
-        slide = prs.slides.add_slide(slide_layout)
-
-
-        # Clear existing placeholders
-        for shape in slide.placeholders:
-            if shape.has_text_frame:
-                shape.text_frame.clear()  # Clear existing text frames
+    # Add title slide after the first slide
+    slide_layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(slide_layout)
 
 
-        # Set title text and format for Parameters slide
-        header_text = "Inferences and Recommendations"
-        header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.5))
-        header_frame = header_shape.text_frame
-        header_frame.text = header_text 
-        for paragraph in header_frame.paragraphs:
-            for run in paragraph.runs:
-                run.text = header_text
-                run.font.size = Pt(30)
-                run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(240, 127, 9)
-                # Set alignment to center
-                paragraph.alignment = PP_ALIGN.CENTER
-                # Set vertical alignment to be at the top
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
+    # Clear existing placeholders
+    for shape in slide.placeholders:
+        if shape.has_text_frame:
+            shape.text_frame.clear()  # Clear existing text frames
 
 
-        # Add News Search text
-        news_search_text = ("Journalists :")
-        news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(0.6), Inches(14), Inches(0.5))
-        news_search_frame = news_search_shape.text_frame
-        news_search_frame.word_wrap = True
-        news_search_frame.clear()  # Clear any default paragraph
-        p = news_search_frame.add_paragraph()
-        p.text = "Journalists :"
-        p.font.size = Pt(20)
-        p.font.name = 'Gill Sans'
-        p.font.underline = True
-        p.font.bold = True
+    # Set title text and format for Parameters slide
+    header_text = "Inferences and Recommendations"
+    header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.5))
+    header_frame = header_shape.text_frame
+    header_frame.text = header_text 
+    for paragraph in header_frame.paragraphs:
+        for run in paragraph.runs:
+            run.text = header_text
+            run.font.size = Pt(30)
+            run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(240, 127, 9)
+            # Set alignment to center
+            paragraph.alignment = PP_ALIGN.CENTER
+            # Set vertical alignment to be at the top
+            paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
 
-        # Add News Search text
-        news_search_text = ("The top journalists reporting on IIT Ropar and its competitors are Sukanya Nandy from News18 with 59 articles, followed by Hemali Chapia from TOI with 44 articles, and Suramya Sunilraj from News18 with 43 articles.\n"
+
+    # Add News Search text
+    news_search_text = ("Journalists :")
+    news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(0.6), Inches(14), Inches(0.5))
+    news_search_frame = news_search_shape.text_frame
+    news_search_frame.word_wrap = True
+    news_search_frame.clear()  # Clear any default paragraph
+    p = news_search_frame.add_paragraph()
+    p.text = "Journalists :"
+    p.font.size = Pt(20)
+    p.font.name = 'Gill Sans'
+    p.font.underline = True
+    p.font.bold = True
+
+    # Add News Search text
+    news_search_text = ("The top journalists reporting on IIT Ropar and its competitors are Sukanya Nandy from News18 with 59 articles, followed by Hemali Chapia from TOI with 44 articles, and Suramya Sunilraj from News18 with 43 articles.\n"
                     "Among the journalists specifically covering IIT Ropar are Munieshwer A Sagar and Deepak Yadav from Times of Indian  has authored 1 articles each  and Arushi Mishra from Hindu Business Line written 1 article.\n"
                     "IIT Ropar has received a total of 44 articles in news coverage. Among these, 39 i.e 88% of the articles were filed by Bureaus, while the remaining 5 i.e 12% were written by individual journalists.\n"
                     "A total of 387 journalists have written 1155 articles covering IIT Ropar and its competitors.\n"
                     "Out of which, 5 journalists have specifically written 5 articles mentioning IIT Ropar i.e of the total journalists writing on IIT Ropar and its competitors only 1% of them have mentioned IIT Ropar in their articles.\n"
                     "While this constitutes a very less number, there is an large opportunity for IIT Ropar to engage with the remaining 882 journalists to enhance its news coverage and reach.\n"
                    )
-        news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
-        news_search_frame = news_search_shape.text_frame
-        news_search_frame.word_wrap = True
-        news_search_frame.clear()  # Clear any default paragraph
-        p = news_search_frame.add_paragraph()
-        p.text = ("The top journalists reporting on IIT Ropar and its competitors are Sukanya Nandy from News18 with 59 articles, followed by Hemali Chapia from TOI with 44 articles, and Suramya Sunilraj from News18 with 43 articles.\n"
+    news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
+    news_search_frame = news_search_shape.text_frame
+    news_search_frame.word_wrap = True
+    news_search_frame.clear()  # Clear any default paragraph
+    p = news_search_frame.add_paragraph()
+    p.text = ("The top journalists reporting on IIT Ropar and its competitors are Sukanya Nandy from News18 with 59 articles, followed by Hemali Chapia from TOI with 44 articles, and Suramya Sunilraj from News18 with 43 articles.\n"
                     "Among the journalists specifically covering IIT Ropar are Munieshwer A Sagar and Deepak Yadav from Times of Indian  has authored 1 articles each  and Arushi Mishra from Hindu Business Line written 1 article.\n"
                     "IIT Ropar has received a total of 44 articles in news coverage. Among these, 39 i.e 88% of the articles were filed by Bureaus, while the remaining 5 i.e 12% were written by individual journalists.\n"
                     "A total of 387 journalists have written 1155 articles covering IIT Ropar and its competitors.\n"
                     "Out of which, 5 journalists have specifically written 5 articles mentioning IIT Ropar i.e of the total journalists writing on IIT Ropar and its competitors only 1% of them have mentioned IIT Ropar in their articles.\n"
                     "While this constitutes a very less number, there is an large opportunity for IIT Ropar to engage with the remaining 882 journalists to enhance its news coverage and reach.\n"
                    )
-        p.font.size = Pt(18)
-        p.font.name = 'Gill Sans
+    p.font.size = Pt(18)
+    p.font.name = 'Gill Sans
 
-        # Add News Search text
-        news_search_text = ("Publication Types :" )
-        news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(5.6), Inches(14), Inches(0.5))
-        news_search_frame = news_search_shape.text_frame
-        news_search_frame.word_wrap = True
-        news_search_frame.clear()  # Clear any default paragraph
-        p = news_search_frame.add_paragraph()
-        p.text = "Publication Type :"
-        p.font.size = Pt(20)
-        p.font.name = 'Gill Sans'
-        p.font.underline = True
-        p.font.bold = True
+    # Add News Search text
+    news_search_text = ("Publication Types :" )
+    news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(5.6), Inches(14), Inches(0.5))
+    news_search_frame = news_search_shape.text_frame
+    news_search_frame.word_wrap = True
+    news_search_frame.clear()  # Clear any default paragraph
+    p = news_search_frame.add_paragraph()
+    p.text = "Publication Type :"
+    p.font.size = Pt(20)
+    p.font.name = 'Gill Sans'
+    p.font.underline = True
+    p.font.bold = True
 
-        news_search_text = ("Top Publication Types writing on IIT Ropar are General and  Business & Financials they both contribute 90% of the total news coverage on IIT Ropar.\n"
+    news_search_text = ("Top Publication Types writing on IIT Ropar are General and  Business & Financials they both contribute 90% of the total news coverage on IIT Ropar.\n"
 "IIT Madras and IIT Delhi dominates across all publication types, especially in general, business ,technology, and digital-first publications.\n"
 "IIT Ropar may find value in engaging more with General and Business along with technology, and digital-first publications to expand her reach and visibility among broader audiences.\n"
                    )
-        news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(6.0), Inches(14), Inches(0.5))
-        news_search_frame = news_search_shape.text_frame
-        news_search_frame.word_wrap = True
-        news_search_frame.clear()  # Clear any default paragraph
-        p = news_search_frame.add_paragraph()
-        p.text = ("Top Publication Types writing on IIT Ropar are General and  Business & Financials they both contribute 90% of the total news coverage on IIT Ropar.\n"
+    news_search_shape = slide.shapes.add_textbox(Inches(0.3), Inches(6.0), Inches(14), Inches(0.5))
+    news_search_frame = news_search_shape.text_frame
+    news_search_frame.word_wrap = True
+    news_search_frame.clear()  # Clear any default paragraph
+    p = news_search_frame.add_paragraph()
+    p.text = ("Top Publication Types writing on IIT Ropar are General and  Business & Financials they both contribute 90% of the total news coverage on IIT Ropar.\n"
 "IIT Madras and IIT Delhi dominates across all publication types, especially in general, business ,technology, and digital-first publications.\n"
 "IIT Ropar may find value in engaging more with General and Business along with technology, and digital-first publications to expand her reach and visibility among broader audiences.\n"
                    )
-        p.font.size = Pt(18)
-        p.font.name = 'Gill Sans'
+    p.font.size = Pt(18)
+    p.font.name = 'Gill Sans'
         
-        # Add title slide after the first slide
-        slide_layout = prs.slide_layouts[6]
-        slide = prs.slides.add_slide(slide_layout)
+    # Add title slide after the first slide
+    slide_layout = prs.slide_layouts[6]
+    slide = prs.slides.add_slide(slide_layout)
 
-        # Clear existing placeholders
-        for shape in slide.placeholders:
-            if shape.has_text_frame:
-                shape.text_frame.clear()  # Clear existing text frames
+    # Clear existing placeholders
+    for shape in slide.placeholders:
+        if shape.has_text_frame:
+            shape.text_frame.clear()  # Clear existing text frames
         
-        # Set title text and format for Parameters slide
-        header_text = "Inferences and Recommendations"
-        header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.5))
-        header_frame = header_shape.text_frame
-        header_frame.text = header_text
-        for paragraph in header_frame.paragraphs:
-            for run in paragraph.runs:
-                run.text = header_text
-                run.font.size = Pt(30)
-                run.font.bold = True
-                run.font.name = 'Helvetica'
-                run.font.color.rgb = RGBColor(240, 127, 9)
-                # Set alignment to center
-                paragraph.alignment = PP_ALIGN.CENTER
-                # Set vertical alignment to be at the top
-                paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
+    # Set title text and format for Parameters slide
+    header_text = "Inferences and Recommendations"
+    header_shape = slide.shapes.add_textbox(Inches(1), Inches(0.3), Inches(14), Inches(0.5))
+    header_frame = header_shape.text_frame
+    header_frame.text = header_text
+    for paragraph in header_frame.paragraphs:
+        for run in paragraph.runs:
+            run.text = header_text
+            run.font.size = Pt(30)
+            run.font.bold = True
+            run.font.name = 'Helvetica'
+            run.font.color.rgb = RGBColor(240, 127, 9)
+            # Set alignment to center
+            paragraph.alignment = PP_ALIGN.CENTER
+            # Set vertical alignment to be at the top
+             paragraph.vertical_anchor = MSO_VERTICAL_ANCHOR.TOP
 
 
-        # # Add Time Period text
-        time_period_text = ("Monthly Coverage , Peak and Topics :")
-        time_period_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
-        time_period_frame = time_period_shape.text_frame
-        time_period_frame.text = time_period_text
-        time_period_frame.word_wrap = True
-        time_period_frame.clear() 
+    # # Add Time Period text
+    time_period_text = ("Monthly Coverage , Peak and Topics :")
+    time_period_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.0), Inches(14), Inches(0.5))
+    time_period_frame = time_period_shape.text_frame
+    time_period_frame.text = time_period_text
+    time_period_frame.word_wrap = True
+    time_period_frame.clear() 
 
-        p = time_period_frame.add_paragraph()
-        p.text = "Monthly Coverage , Peak and Topics :"
-        p.font.size = Pt(20)
-        p.font.name = 'Gill Sans'
-        p.font.underline = True
-        p.font.bold = True
+    p = time_period_frame.add_paragraph()
+    p.text = "Monthly Coverage , Peak and Topics :"
+    p.font.size = Pt(20)
+    p.font.name = 'Gill Sans'
+    p.font.underline = True
+    p.font.bold = True
 
 
-        time_period_text = ("The total number of news articles over the period is 5311. There is noticeable fluctuation in coverage from month to month, with periods of both increase and decline.\n"
+    time_period_text = ("The total number of news articles over the period is 5311. There is noticeable fluctuation in coverage from month to month, with periods of both increase and decline.\n"
 "Sept 2023 saw the highest number of articles, with 524 mentions. This spike suggests a significant event or increased media focus on Steel Industry during that month.\n"
 "Dec 2023 has the lowest coverage so far, with only 337 mentions.\n"
 "There was  peak in Sept-23 due to following news:The increase in volume is due to Prime Minister Narendra Modi's visit to Chhattisgarh and the launch of multiple development projects, including the dedication of the NMDC Steel Plant in Bastar. The projects are expected to provide employment opportunities and contribute to the reduction of debt burden. The political controversy surrounding the Nagarnar Steel Plant and the statements made by Chief Minister Bhupesh Baghel have also contributed to the spike in volume\n"
                    )
-        time_period_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.4), Inches(14), Inches(0.5))
-        time_period_frame = time_period_shape.text_frame
-        time_period_frame.text = time_period_text
-        time_period_frame.word_wrap = True
-        time_period_frame.clear() 
+    time_period_shape = slide.shapes.add_textbox(Inches(0.3), Inches(1.4), Inches(14), Inches(0.5))
+    time_period_frame = time_period_shape.text_frame
+    time_period_frame.text = time_period_text
+    time_period_frame.word_wrap = True
+    time_period_frame.clear() 
 
-        p = time_period_frame.add_paragraph()
-        p.text = ("The total number of news articles over the period is 5311. There is noticeable fluctuation in coverage from month to month, with periods of both increase and decline.\n"
+    p = time_period_frame.add_paragraph()
+    p.text = ("The total number of news articles over the period is 5311. There is noticeable fluctuation in coverage from month to month, with periods of both increase and decline.\n"
 "Sept 2023 saw the highest number of articles, with 524 mentions. This spike suggests a significant event or increased media focus on Steel Industry during that month.\n"
 "Dec 2023 has the lowest coverage so far, with only 337 mentions.\n"
 "There was  peak in Sept-23 due to following news:The increase in volume is due to Prime Minister Narendra Modi's visit to Chhattisgarh and the launch of multiple development projects, including the dedication of the NMDC Steel Plant in Bastar. The projects are expected to provide employment opportunities and contribute to the reduction of debt burden. The political controversy surrounding the Nagarnar Steel Plant and the statements made by Chief Minister Bhupesh Baghel have also contributed to the spike in volume\n"
                    )
-        p.font.size = Pt(18)
-        p.font.name = 'Gill Sans'
+    p.font.size = Pt(18)
+    p.font.name = 'Gill Sans'
 
 
-        # Sidebar for PowerPoint download settings
-        st.sidebar.write("## Download All DataFrames as a PowerPoint File")
-        pptx_file_name = st.sidebar.text_input("Enter file name for PowerPoint", "dataframes_presentation.pptx")
+    # Sidebar for PowerPoint download settings
+    st.sidebar.write("## Download All DataFrames as a PowerPoint File")
+    pptx_file_name = st.sidebar.text_input("Enter file name for PowerPoint", "dataframes_presentation.pptx")
 
-        if st.sidebar.button("Download PowerPoint"):
-            # List of DataFrames to save
-            dfs = [Entity_SOV1, sov_dt, pubs_table, Jour_table, PType_Entity, PP_table, ppe1]
-            table_titles = ['SOV Table', 'Month-on-Month Table', 'Publication Table', 'Journalist Table',
+    if st.sidebar.button("Download PowerPoint"):
+        # List of DataFrames to save
+        dfs = [Entity_SOV1, sov_dt, pubs_table, Jour_table, PType_Entity, PP_table, ppe1]
+        table_titles = ['SOV Table', 'Month-on-Month Table', 'Publication Table', 'Journalist Table',
                     'Pub Type and Entity Table', 'Pub Type and Pub Name Table',
                     'PubType PubName and Entity Table']
 
-            # Create a new PowerPoint presentation
-            prs = Presentation()
+        # Create a new PowerPoint presentation
+        prs = Presentation()
 
-            # Loop through each DataFrame and create a new slide with a table
-            for i, (df, title) in enumerate(zip(dfrs, table_titles)):
-                slide = prs.slides.add_slide(prs.slide_layouts[6])
-                add_table_to_slide(slide, df, title, textbox_text[i])
+        # Loop through each DataFrame and create a new slide with a table
+        for i, (df, title) in enumerate(zip(dfrs, table_titles)):
+            slide = prs.slides.add_slide(prs.slide_layouts[6])
+            add_table_to_slide(slide, df, title, textbox_text[i])
 
-            # Save presentation to BytesIO for download
-            pptx_output = BytesIO()
-            prs.save(pptx_output)
-            pptx_output.seek(0)
+        # Save presentation to BytesIO for download
+        pptx_output = BytesIO()
+        prs.save(pptx_output)
+        pptx_output.seek(0)
 
-            # Provide download button
-            st.sidebar.download_button(
-                label="Download PowerPoint Presentation",
-                data=pptx_output,
-                file_name=pptx_file_name,
-                mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
+        # Provide download button
+        st.sidebar.download_button(
+            label="Download PowerPoint Presentation",
+            data=pptx_output,
+            file_name=pptx_file_name,
+            mime="application/vnd.openxmlformats-officedocument.presentationml.presentation"
     )
 #         # Download All DataFrames as a Single Excel Sheet
 #         st.sidebar.write("## Download All DataFrames as a Single Excel Sheet")
