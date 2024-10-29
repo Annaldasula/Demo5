@@ -802,7 +802,7 @@ else:
                     "While this constitutes a very less number, there is an large opportunity for IIT Ropar to engage with the remaining 882 journalists to enhance its news coverage and reach.\n"
                    )
     p.font.size = Pt(18)
-    p.font.name = 'Gill Sans
+    p.font.name = 'Gill Sans'
 
     # Add News Search text
     news_search_text = ("Publication Types :" )
