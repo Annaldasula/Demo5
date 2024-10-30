@@ -507,9 +507,6 @@ News search: All Articles: entity mentioned at least once in the article"""
             href_all = f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64_all}" download="{file_name_all}">Download All DataFrames Excel</a>'
             st.sidebar.markdown(href_all, unsafe_allow_html=True)
 
-else:
-    st.sidebar.write("No file uploaded yet.")
-
     # Load the image files
     # img_path = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Documents\NewLogo.PNG"
     # img_path1 = r"D:\Akshay.Annaldasula\OneDrive - Adfactors PR Pvt Ltd\Pictures\Picture1.png"
@@ -952,3 +949,6 @@ else:
 #         for i, (df, title) in enumerate(zip(dfrs, table_titles)):
 #             slide = prs.slides.add_slide(prs.slide_layouts[6])
 #             add_table_to_slide(slide, df, title, textbox_text[i])
+
+else:
+    st.sidebar.write("No file uploaded yet.")
