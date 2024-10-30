@@ -920,7 +920,7 @@ News search: All Articles: entity mentioned at least once in the article"""
             add_table_to_slide(slide, df, title, textbox_text[i])
 
         # Save presentation to BytesIO for download
-        pptx_output = BytesIO()
+        pptx_output = io.BytesIO()
         prs.save(pptx_output)
         pptx_output.seek(0)
 
