@@ -907,8 +907,10 @@ News search: All Articles: entity mentioned at least once in the article"""
         dfs = [Entity_SOV3, sov_dt1, pubs_table, Jour_table, PType_Entity, PP_table]
         table_titles = ['SOV Table', 'Month-on-Month Table', 'Publication Table', 'Journalist Table',
                     'Pub Type and Entity Table', 'Pub Type and Pub Name Table',
-                    'PubType PubName and Entity Table']
-
+                    ]
+        text_text = ['SOV Table', 'Month-on-Month Table', 'Publication Table', 'Journalist Table',
+                    'Pub Type and Entity Table', 'Pub Type and Pub Name Table',
+                    ]
         # Create a new PowerPoint presentation
         prs = Presentation()
 
